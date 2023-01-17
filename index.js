@@ -1,24 +1,25 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown')
-// TODO: Create an array of questions for user input
+// These are a series of questions that determine ther context of the read me file.
 const questions = [
     "What will be the name of your repository?",
     "Please give a brief discription of you repository",
     "How is the program installed?",
     "What is the purpose of your repository/How do you plan on using it?",
     "Who contributed to this project?",
-    "What license would you like?"
+    "What license would you like?",
+    "What is your e-mail address?"
 ];
 
-// TODO: Create a function to write README file
+// this generated the read me file based on the user input
 function writeToFile(fileName, data) {
-    fs.writeFileSync("README.md", generateMarkdown(data))
+    fs.writeFileSync(fileName, generateMarkdown(data))
 }
 
-// TODO: Create a function to initialize app
-function init() {
-    inquirer
+// An array of questions for the user to answer
+async function init() {
+    await inquirer
         .prompt([
             {
                 type: 'input',
@@ -51,13 +52,18 @@ function init() {
                 choices: ['None', "MIT", "Apache", "ISC"],
                 name: 'license',
             },
+            {
+                type: 'input',
+                message: questions[6],
+                name: 'contact-info',
+            },
         ])
         .then((data) => {
             return data;
         });
     then((data) => {
-        writeToFile(fileName, data)
+        writeToFile("README.md", data)
     })
 };
-
+// Calls the function for the promped inquirer to begin
 init()

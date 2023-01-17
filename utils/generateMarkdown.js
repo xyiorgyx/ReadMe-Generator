@@ -1,21 +1,59 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+// The following function returns a license badge if chosen
+function renderLicenseBadge(data) {
+  switch (license) {
+    case MIT:
+      var licenseBadge = `https://img.shields.io/badge/License-MIT-yellow.svg`;
+    case Apache:
+      var licenseBadge = `https://img.shields.io/badge/License-Apache_2.0-blue.svg`;
+    case ISC:
+      var licenseBadge = `https://img.shields.io/badge/License-ISC-blue.svg`;
+    default:
+      console.log("You selected No license")
+      return "";
+  }
+  return licenseBadge
+}
 
 // TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseLink(license) {
+  switch (license) {
+    case MIT:
+      var licenseLink = "https://opensource.org/licenses/MIT";
+    case Apache:
+      var licenseLink = "https://opensource.org/licenses/Apache-2.0";
+    case ISC:
+      var licenseLink = `https://opensource.org/licenses/ISC`;
+    default:
+      console.log("You selected No license")
+      return "";
+  }
+  return licenseLink
+}
 
-// TODO: Create a function to generate markdown for README
+// A function to render all lciense information into the read me file.
+function renderLicenseSection(license) {
+ var licenseBadge = renderLicenseBadge(data);
+ var licenseLink = renderLicenseLink(data);
+
+ return `
+ ${data.licenseBadge}
+ ${data.licenseLink} License
+
+
+ Copyright (c) 2023 ${data.credits}`
+
+
+}
+ 
+// Function is to create the structure of the markdown file once all questions have been answered.
 function generateMarkdown(data) {
-  return`
-# ${data.title}
+  return `
+# 
+${data.title}
 
-## ${data.description}
+## 
+${data.description}
 
 ## Table of Contents:
 
@@ -25,13 +63,17 @@ function generateMarkdown(data) {
 - [Credits](#credits)
 - [License](#license)
 
-  return ## ${data.installation}
+  return ##
+  ${data.installation}
 
-  return ## ${data.usage}
+  return ## 
+  ${data.usage}
 
-  return ## ${data.credits}
+  return ## 
+  ${data.credits}
 
-  return ## ${data.license}`
+  return ## 
+  ${renderLicenseSection(data.license)}`
 }
 
 module.exports = generateMarkdown;
