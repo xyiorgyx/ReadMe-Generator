@@ -12,10 +12,8 @@ const questions = [
     "What is your e-mail address?"
 ];
 
-// this generated the read me file based on the user input
-function writeToFile(fileName, data) {
-    fs.writeFileSync(fileName, generateMarkdown(data))
-}
+
+
 
 // An array of questions for the user to answer
 async function init() {
@@ -58,12 +56,8 @@ async function init() {
                 name: 'contact-info',
             },
         ])
-        .then((data) => {
-            return data;
-        });
-    then((data) => {
-        writeToFile("README.md", data)
-    })
-};
+        .then ((data) => fs.writeFileSync("Readme.md", generateMarkdown(data)))
+        err ? console.error(err) : console.log('File Created')
+    }
 // Calls the function for the promped inquirer to begin
 init()
