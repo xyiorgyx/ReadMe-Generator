@@ -56,8 +56,10 @@ async function init() {
                 name: 'contact-info',
             },
         ])
-        .then ((data) => fs.writeFileSync("Readme.md", generateMarkdown(data)))
-        err ? console.error(err) : console.log('File Created')
-    }
+        .then((data) => fs.writeFileSync("Readme.md", generateMarkdown(data)))
+        .then(() => console.log('Successfully wrote to readme.md'))
+        .catch((err) => console.error(err));
+}
 // Calls the function for the promped inquirer to begin
+
 init()
