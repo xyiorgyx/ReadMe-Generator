@@ -27,7 +27,7 @@ async function init() {
             {
                 type: 'input',
                 message: questions[1],
-                name: 'discription',
+                name: 'description',
             },
             {
                 type: 'input',
