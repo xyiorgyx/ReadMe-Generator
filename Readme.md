@@ -9,6 +9,7 @@ The read me Generator is a simple application for developers rto quickly and eas
 
 - [Installation](#installation)
 - [Directions](#Directions)
+- [Purpose](#Purpose)
 - [Contributers](#Contributors)
 - [License](#license)
 - [Contact](#contactInfo)
@@ -17,8 +18,9 @@ The read me Generator is a simple application for developers rto quickly and eas
 To begin open up the index.js file in the intergrated terminal and download the dependencies using "npm i". 
 
 ## Directions
-The following is a video giving a live demonstration on how to use the application.
+This [video](https://drive.google.com/file/d/1lcxdp-drmaXRVkbiYuG_V3c3R7x1HtL7/view) gives a live demonstration on how to use the application.
 
+* Please note that upon completion your readme file will be titled "Sample-Readme.md"
 
 ## Purpose
 The purpose of the repository to help developers create simple and easy readme.md files where all the structuring and license badges are already pre-programmed into the application. 

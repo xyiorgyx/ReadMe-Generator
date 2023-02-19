@@ -39,8 +39,10 @@ ${data.description}
 
 ## Table of Contents:
 
+
 - [Installation](#installation)
-- [How to use](#How to Use)
+- [Directions](#Directions)
+- [Purpose](#Purpose)
 - [Contributers](#Contributors)
 - [License](#license)
 - [Contact](#contactInfo)
@@ -48,7 +50,10 @@ ${data.description}
 ## Installation
 ${data.installation}
 
-## How to use
+## Directions
+${data.directions}
+
+## Purpose
 ${data.usage}
 
 ## Contributers
@@ -61,7 +66,7 @@ ${renderLicenseLink(data.license)}
 
 ## ContactInfo
 
-Contact me at anytime at ${data.contactInfo} for questions or other inquieries. Also check out my github account at https://github.com/${data.userName}.
+Contact me at anytime at ${data.contactInfo} for any questions or other inquieries. Also, check out my github account at https://github.com/${data.userName}.
 
 Copyright (c) 2023
  `
