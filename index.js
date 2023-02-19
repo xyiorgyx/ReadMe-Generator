@@ -5,7 +5,8 @@ const generateMarkdown = require('./utils/generateMarkdown')
 const questions = [
     "What will be the name of your repository?",
     "Please give a brief discription of you repository",
-    "How is the program installed?",
+    "How do I install the application? ",
+    "Offer directions on how to get started using your new application.",
     "What is the purpose of your repository/How do you plan on using it?",
     "Who contributed to this project?",
     "What license would you like?",
@@ -38,27 +39,33 @@ async function init() {
             {
                 type: 'input',
                 message: questions[3],
+                name: 'directions',
+            },
+
+            {
+                type: 'input',
+                message: questions[4],
                 name: 'usage',
             },
             {
                 type: 'input',
-                message: questions[4],
+                message: questions[5],
                 name: 'credits',
             },
             {
                 type: 'list',
-                message: questions[5],
+                message: questions[6],
                 choices: ['None', "MIT", "Apache", "ISC"],
                 name: 'license',
             },
             {
                 type: 'input',
-                message: questions[6],
+                message: questions[7],
                 name: 'contactInfo',
             },
             {
                 type: 'input',
-                message: questions[7],
+                message: questions[8],
                 name: 'userName',
             },
         ])
