@@ -2,11 +2,11 @@
 function renderLicenseBadge(license) {
   switch (license) {
     case 'MIT':
-      return `https://img.shields.io/badge/License-MIT-yellow.svg`;
+      return `![License](https://img.shields.io/badge/License-MIT-yellow.svg)`;
     case 'Apache':
-      return `https://img.shields.io/badge/License-Apache_2.0-blue.svg`;
+      return `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`;
     case 'ISC':
-      return `https://img.shields.io/badge/License-ISC-blue.svg`;
+      return `![License](https://img.shields.io/badge/License-ISC-blue.svg)`;
     default:
       console.log("You selected No license")
       return "";
@@ -32,6 +32,7 @@ function renderLicenseLink(license) {
 function generateMarkdown(data) {
   return `
 # ${data.title}
+${renderLicenseBadge(data.license)}
 
 ## Description
 ${data.description}
@@ -39,27 +40,30 @@ ${data.description}
 ## Table of Contents:
 
 - [Installation](#installation)
-- [Usage](#usage)
-- [How-To-Use](#instructions)
-- [Credits](#credits)
+- [How to use](#How to Use)
+- [Contributers](#Contributors)
 - [License](#license)
+- [Contact](#contactInfo)
 
-  ## Installation
-  ${data.installation}
+## Installation
+${data.installation}
 
-  ## How to use
-  ${data.usage}
+## How to use
+${data.usage}
 
-  ## Contributers
-  ${data.credits}
-
-
-  ## License
- ${renderLicenseBadge(data.license)}
- ${renderLicenseLink(data.license)} License
+## Contributers
+${data.credits}
 
 
- Copyright (c) 2023
+## License
+${renderLicenseLink(data.license)} 
+
+
+## ContactInfo
+
+Contact me at anytime at ${data.contactInfo} for questions or other inquieries. Also check out my github account at https://github.com/${data.userName}.
+
+Copyright (c) 2023
  `
 }
 

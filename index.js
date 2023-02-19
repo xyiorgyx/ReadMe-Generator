@@ -9,7 +9,8 @@ const questions = [
     "What is the purpose of your repository/How do you plan on using it?",
     "Who contributed to this project?",
     "What license would you like?",
-    "What is your e-mail address?"
+    "What is your e-mail address?",
+    "What is your github User name?"
 ];
 
 
@@ -53,11 +54,16 @@ async function init() {
             {
                 type: 'input',
                 message: questions[6],
-                name: 'contact-info',
+                name: 'contactInfo',
+            },
+            {
+                type: 'input',
+                message: questions[7],
+                name: 'userName',
             },
         ])
-        .then((data) => fs.writeFileSync("Readme.md", generateMarkdown(data)))
-        .then(() => console.log('Successfully wrote to readme.md'))
+        .then((data) => fs.writeFileSync("Sample-Readme.md", generateMarkdown(data)))
+        .then(() => console.log('Successfully wrote to Sample-readme.md'))
         .catch((err) => console.error(err));
 }
 // Calls the function for the promped inquirer to begin
